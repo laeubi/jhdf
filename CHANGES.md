@@ -1,9 +1,14 @@
 # jHDF Change Log
 
+## v0.12.0 - July 2026
+- Add dataset dimension parsing for dimensions larger than `Integer.MAX_VALUE`, adding long-dimension access and slicing support for large datasets. Thanks to @misha-at-genestack https://github.com/jamesmudd/jhdf/pull/825
+- Fix OSGi manifest generation by using the bnd Gradle plugin. Thanks to @laeubi https://github.com/jamesmudd/jhdf/pull/832
+- Fix JitPack builds
+- Build and dependency updates
+
 ## v0.11.0 - June 2026
 - Fix chunk coordinate handling in chunked datasets so retrieval from chunk map succeeds. Thanks to @frothga https://github.com/jamesmudd/jhdf/pull/800 https://github.com/jamesmudd/jhdf/issues/727 and https://github.com/jamesmudd/jhdf/issues/760
 - Add support for Java 25
-- Fix dataset dimension parsing for dimensions larger than `Integer.MAX_VALUE`, adding long-dimension metadata access and slice support for large datasets
 - Switch from `com.ning:compress-lzf` to replacement `at.yawk.lz4:lz4-java` for LZ4 compression support
 - Enable Gradle dependency locking
 - Fix JitPack configuration for rolling jar releases
