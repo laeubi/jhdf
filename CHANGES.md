@@ -1,9 +1,9 @@
 # jHDF Change Log
 
 ## v0.12.0 - July 2026
-- Fix dataset dimension parsing for dimensions larger than `Integer.MAX_VALUE`, adding long-dimension metadata access and slice support for large datasets. Thanks to @misha-at-genestack https://github.com/jamesmudd/jhdf/pull/825
+- Add dataset dimension parsing for dimensions larger than `Integer.MAX_VALUE`, adding long-dimension access and slicing support for large datasets. Thanks to @misha-at-genestack https://github.com/jamesmudd/jhdf/pull/825
 - Fix OSGi manifest generation by using the bnd Gradle plugin. Thanks to @laeubi https://github.com/jamesmudd/jhdf/pull/832
-- Add JitPack badge to the README
+- Fix JitPack builds
 - Build and dependency updates
 
 ## v0.11.0 - June 2026
