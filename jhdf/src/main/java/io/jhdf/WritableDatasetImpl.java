@@ -53,9 +53,22 @@ public class WritableDatasetImpl extends AbstractWritableNode implements Writabl
 	private final DataSpace dataSpace;
 
 	public WritableDatasetImpl(Object data, String name, Group parent) {
+		this(data, name, parent, false);
+	}
+
+	/**
+	 * Creates a writable dataset, optionally forcing the underlying fixed point (integer)
+	 * data type to be written as unsigned.
+	 *
+	 * @param data the dataset data, must be a supported fixed point (integer) array/scalar when {@code unsigned} is {@code true}
+	 * @param name the dataset name
+	 * @param parent the parent group
+	 * @param unsigned if {@code true} the data type will be written as unsigned fixed point
+	 */
+	public WritableDatasetImpl(Object data, String name, Group parent, boolean unsigned) {
 		super(parent, name);
 		this.data = data;
-		this.dataType = DataType.fromObject(data);
+		this.dataType = DataType.fromObject(data, unsigned);
 		this.dataSpace = DataSpace.fromObject(data);
 	}
 

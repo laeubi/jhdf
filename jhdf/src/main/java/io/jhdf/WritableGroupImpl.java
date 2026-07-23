@@ -123,6 +123,19 @@ public class WritableGroupImpl extends AbstractWritableNode implements WritableG
     return writableDataset;
   }
 
+  @Override
+  public WritableDataset putDataset(String name, Object data, boolean unsigned) {
+    if (StringUtils.isBlank(name)) {
+      throw new IllegalArgumentException("name cannot be null or blank");
+    }
+    logger.debug(
+        "putting inferred dataset with type and shape inference '" + name + "' into " + "group '"
+        + this.getName() + "'");
+    WritableDataset writableDataset = new WritableDatasetImpl(data, name, this, unsigned);
+    children.put(name, writableDataset);
+    logger.info("Added dataset [{}] to group [{}]", name, getPath());
+    return writableDataset;
+  }
 
 	@Override
 	public WritableGroup putGroup(String name) {
